@@ -66,11 +66,11 @@ app.get("/secrets", async (req, res) => {
       // It's good practice to fetch the latest user data.
       // The req.user object comes from the deserialized session.
       const result = await db.query(
-        `SELECT secret FROM users WHERE id = $1`,
+        `SELECT secrets FROM users WHERE id = $1`,
         [req.user.id]
       );
       
-      const secret = result.rows.length > 0 ? result.rows[0].secret : null;
+      const secret = result.rows.length > 0 ? result.rows[0].secrets : null;
 
       if (secret) {
         res.render("secrets.ejs", { secret: secret });
@@ -172,7 +172,7 @@ app.post("/submit", async function (req, res) {
   const submittedSecret = req.body.secret;
   try {
     // Use the user ID from the session to ensure we update the correct user.
-    await db.query(`UPDATE users SET secret = $1 WHERE id = $2`, [
+    await db.query(`UPDATE users SET secrets = $1 WHERE id = $2`, [
       submittedSecret,
       req.user.id,
     ]);
