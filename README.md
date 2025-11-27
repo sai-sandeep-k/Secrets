@@ -3,7 +3,7 @@
 A secure, full-stack web application that allows users to register, authenticate securely, and share personal secrets. This project demonstrates robust backend security practices integrated with a modern, responsive frontend.
 
 ## 🌐 Live Demo
-[View Live Application](https://secrets-app-r8zw.onrender.com/) *(Replace with your actual deployment URL)*
+[View Live Application](https://secrets-app-r8zw.onrender.com/) 
 
 ---
 
